@@ -156,6 +156,7 @@
 					<li class='fragment'>To create databases and move information in and out of them, you might use MySQL, SQL, or Postgres.</li>
 					<li class='fragment'>To write applications like Microsoft Word or Adobe Acrobat, you might use C++ or Java.</li>
 					<li class='fragment'>To automate your operating system or an application like Word, you might use Bash or Visual Basic.</li>
+					<li class='fragment'>To build a website, you might use JavaScript, PHP, or Python.</li>
 				</ul>
 			</section>
 
@@ -163,7 +164,7 @@
 				<h3>Computers are dumb</h3>
 				<ul>
 					<li class='fragment'>Computers can only do what they have instructions for, and they take those instructions VERY literally.</li>
-					<li class='fragment'>As a result, you have to tell them every single thing you want them to do and every single thing to take into consideration. \</li>
+					<li class='fragment'>As a result, you have to tell them every single thing you want them to do and every single thing to take into consideration.</li>
 					<li class='fragment'>If you leave any instructions out (or put them in the “wrong” order), the results might not be what you expect.</li>
 				</ul>
 			</section>
@@ -187,11 +188,13 @@
 			</section>
 
 			<section>
-				<h3>Hello, World!</h3>
+				<h3>Hello, World! - Syntax</h3>
 
 				<p>Just like English has the concepts of vocabulary and grammar, so do computer languages!</p>
 				<br/>
 				<p class='fragment'>In computer programming, the <strong>syntax</strong> of a computer language is what defines if the combination of letters and symbols used are considered a valid construction in that language.</p>
+
+				<p class='fragment'>Syntax mistakes may cause your code to throw <em>compile time</em> errors.</p>
 			</section>
 
 			<section>
@@ -260,7 +263,7 @@
 					<li class='fragment'>The price of the books is stored as a float (e.g., 15.99)</li>
 				</ul>
 				<br /><br/>
-				<p class='fragment'>Not every programming language makes a distinction between these two, but it's good to be aware of.</p>
+				<p class='fragment'>Not every programming language makes a distinction between these two (and some have even finer-grained distinctions!), but it's good to be aware of.</p>
 			</section>
 
 			<section>
@@ -277,24 +280,24 @@
 			</section>
 
 			<section>
-			<h3>Numbers as strings</h3>
-			<p>You <b>can</b> store a number as a string variable, but then you typically can't use it in any mathematical calculations.</p>
-			<br />
-			<p class='fragment'>For example, credit card numbers are integers, but you would never use them in a mathematical calculation, so you could store them either way.</p>
+				<h3>Numbers as strings</h3>
+				<p>You <b>can</b> store a number as a string variable, but then you typically can't use it in any mathematical calculations.</p>
+				<br />
+				<p class='fragment'>For example, credit card numbers are integers, but you would never use them in a mathematical calculation, so you could store them either way.</p>
 
-			<br />
-			<p class='fragment'>As another example, consider postal codes. If you store them as integers, then you can only support codes from the USA!  Other countries use postal codes with letters in them (e.g., BL1 1AD is in the UK).</p>
+				<br />
+				<p class='fragment'>As another example, consider postal codes. If you store them as integers, then you can only support codes from the USA!  Other countries use postal codes with letters in them (e.g., BL1 1AD is in the UK).</p>
 			</section>
 
 			<section>
-			<h3>Boolean Variables</h3>
-			<p><strong>Boolean variables</strong> are used to store the value <b>TRUE</b> or <b>FALSE</b> (yes or no).</p>
+				<h3>Boolean Variables</h3>
+				<p><strong>Boolean variables</strong> are used to store the value <b>TRUE</b> or <b>FALSE</b> (yes or no).</p>
 
-			<br/>
-			<p class='fragment'>Booleans are most frequently used to control whether certain functionality is enabled or disabled.</p>
+				<br/>
+				<p class='fragment'>Booleans are most frequently used to control whether certain functionality is enabled or disabled.</p>
 
-			<br/>
-			<p class='fragment'>For example, back on Amazon.com, if your login credentials validate, this may be stored as a "true" (yes).  As a result, your account information displays, your cart is populated, etc.</p>
+				<br/>
+				<p class='fragment'>For example, back on Amazon.com, if your login credentials validate, this may be stored as a "true" (yes).  As a result, your account information displays, your cart is populated, etc.</p>
 			</section>
 
 			<section>
@@ -318,9 +321,21 @@
 
 			<section>
 				<h3>Storage</h3>
-				<p><strong>Storage</strong> a more permanent type of memory. The computer user can utilize it to keep data around even after the computer is turned off.</p>
+				<p><strong>Storage</strong> is a more permanent type of memory. The computer user can utilize it to keep data around even after the computer is turned off.</p>
 				<br/>
 				<p>Examples include the hard drive on the computer, a thumb drive, or an external hard drive.</p>
+			</section>
+
+			<section>
+				<h3>Hello, World! - Semantics</h3>
+
+				<p class='fragment'>Colorless green ideas sleep furiously.</p>
+
+				<p class='fragment'>It is possible to create an English sentence that is grammatically correct but meaningless or self-contradictory. The same is true of programming languages.</p>
+
+				<p class='fragment'>In coding, <strong>semantics</strong> refers to the meaning of the symbols you use.</p>
+
+				<p class='fragment'>Semantic mistakes may cause your code to throw <em>run time</em> errors.</p>
 			</section>
 
 			<section>
@@ -332,12 +347,13 @@
 				<p class='fragment'>We use <strong>operators</strong> to compare, combine, or evaluate combinations of variables in order to produce some desired output. We could then store this output in another variable, if we wanted!</p>
 
 			</section>
+
 			<section>
 				<h3>Operators</h3>
 				<p>Some examples of operators:</p>
 				<br/>
 				<ul style='width:600px;'>
-					<li>= (equal to)</li>
+					<li>= or == (equal to)</li>
 					<li>!= (not equal to)</li>
 					<li>> (greater than)</li>
 					<li>< (less than)</li>
@@ -420,7 +436,8 @@ end
 				<br />
 				<p class='fragment'>An infinite loop is a loop that will never meet the condition to stop.  For example, if you're waiting for a variable (like that ebay timer) to reach 0, but the timer variable keeps *increasing* instead of *decreasing*, the loop will continue forever!</p>
 				<br />
-				<p class='fragment'>Your program will keep running until it uses up all your computer's RAM memory. This is BAD!</p>
+				<p class='fragment'>Your program will keep running until it uses up all your computer's RAM memory. This is (generally) BAD!</p>
+				<p class='fragment'>An exception to this rule is a <strong>worker</strong> program, which may run constantly so that it can listen for certain kinds of input and respond without being "turned on".</p>
 
 			</section>
 
@@ -488,7 +505,7 @@ print 'no more bottles of beer!'
 			<section>
 				<h3>Comments</h3>
 
-				<p>One final thing to keep in mind is that it's good practice to leave <strong>comments</strong> in your code.  Comments are not executed by the program. They're just there for you to read.</p>
+				<p>Some programmers like to leave <strong>comments</strong> in their code.  Comments are not executed by the program. They're just there for you (and other programmers) to read.</p>
 
 				<br/>
 				<p class='fragment'>Comments should explain why your code is doing what it's doing.</p>
@@ -502,6 +519,18 @@ print 'hello, world!';
 			</section>
 
 			<section>
+				<h3>Hello, World! - Style</h3>
+
+				<p class='fragment'>Code with style! (Just like everybody else).</p>
+
+				<p class='fragment'><strong>Style</strong> describes sets of rules that coders apply to their code. These rules can help to make the code more readable, prevent errors, and enforce consistency.</p>
+
+				<p class='fragment'><em>Linters</em> are tools that know about these rules and can check your code for consistency with them. Coding teams use linters to ensure code in their projects meets certain standards.</p>
+
+				<p class='fragment'>Style mistakes may cause your code to throw no errors at all! (But may annoy your teammates).</p>
+			</section>
+
+			<section>
 				<h3>What we learned today</h3>
 				<ul>
 					<li class='fragment'>What is a computer program?</li>
@@ -511,6 +540,7 @@ print 'hello, world!';
 					<li class='fragment'>If/Then/Else Statements</li>
 					<li class='fragment'>Loops</li>
 					<li class='fragment'>Comments</li>
+					<li class='fragment'>Syntax vs. Semantics vs. Style</li>
 				</ul>
 			</section>
 

@@ -1,0 +1,118 @@
+<html>
+<style>
+table {
+	width: 80%;
+	height: 80%;
+}
+td {
+	border: solid;
+}
+td.focus {
+	background-image: url("./images/lizard_icon_pink.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 30%;
+	transform: rotate(180deg);
+}
+td.black {
+	background-color: black;
+}
+td.focus.black {
+	background-image: url("./images/normal_explosion.png");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+div {
+	margin-top: 10px;
+	font-size: 25px;
+}
+input[type="text"] {
+	font-size: 25px;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		document.querySelector('input[name="instruction"]').addEventListener('change', changeEventHandler,false);
+	}
+
+	function changeEventHandler(event) {
+		let current = document.getElementsByClassName("focus")[0];
+		
+		var instruction = event.target.value;
+		let newEl, col;
+		switch (instruction) {
+			case "go forward":
+				col = getCol(current);
+				newEl = current.parentElement.nextElementSibling.querySelector("." + col);
+				break;
+			case "go back":
+				col = getCol(current);
+				newEl = current.parentElement.previousElementSibling.querySelector("." + col);
+				break;
+			case "go left":
+				newEl = current.previousElementSibling;
+				break;
+			case "go right":
+				newEl = current.nextElementSibling;
+				break;
+			default:
+				newEl = current;	
+				break;
+		}
+		current.classList.remove("focus");
+		newEl.classList.add("focus");
+	}
+	function getCol(el) {
+		var re = /^.*(col\d+).*$/;
+		var className = el.className;
+		return className.replace(re, '$1');
+	}
+</script>
+<body>
+	<table>
+		<tbody>
+			<tr>
+				<td class="col1 black"></td>
+				<td class="col2 focus"></td>
+				<td class="col3 black"></td>
+				<td class="col4 black"></td>
+				<td class="col5"></td>
+			</tr>
+			<tr>
+				<td class="col1 black"></td>
+				<td class="col2"></td>
+				<td class="col3 black"></td>
+				<td class="col4 black"></td>
+				<td class="col5"></td>
+			</tr>
+			<tr>
+				<td class="col1 black"></td>
+				<td class="col2"></td>
+				<td class="col3"></td>
+				<td class="col4 black"></td>
+				<td class="col5"></td>
+			</tr>
+			<tr>
+				<td class="col1 black"></td>
+				<td class="col2 black"></td>
+				<td class="col3"></td>
+				<td class="col4 black"></td>
+				<td class="col5"></td>
+			</tr>
+			<tr>
+				<td class="col1 black"></td>
+				<td class="col2 black"></td>
+				<td class="col3"></td>
+				<td class="col4"></td>
+				<td class="col5"></td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<form>
+			<label for="instruction">What should I do?</label>
+			<input type="text" name="instruction">
+		</form>
+	</div>
+</body>
+</html>
